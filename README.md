@@ -9,6 +9,22 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```
+
+let whiteColor = UIColor(rgbHex: 0xFFFFFF)
+
+let whiteColor = UIColor(argbHex: 0xFFFFFFFF)
+
+let whiteColor = UIColor(red: 0xFF, green: 0xFF, blue: 0xFF)
+
+let whiteColor = UIColor(alpha: 0xFF, red: 0xFF, green: 0xFF, blue: 0xFF)
+
+let rgbString = whiteColor.RGBString    // "FFFFFF"
+
+let argbString = whiteColor.ARGBString  // "FFFFFFFF"
+
+```
+
 ## Requirements
 
 ## Installation
