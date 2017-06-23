@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    public func setAlpha(_ value: CGFloat) -> UIImage {
+    open func applying(alpha: CGFloat) -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
         
@@ -20,7 +20,7 @@ extension UIImage {
             context.scaleBy(x: 1, y: -1)
             context.translateBy(x: 0, y: -area.size.height)
             context.setBlendMode(CGBlendMode.multiply)
-            context.setAlpha(value)
+            context.setAlpha(alpha)
             context.draw(CGImage, in: area)
             
             return UIGraphicsGetImageFromCurrentImageContext() ?? self

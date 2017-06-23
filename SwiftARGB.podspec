@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftARGB'
-  s.version          = '0.9.3'
+  s.version          = '2.0.0'
   s.summary          = 'ARGB-related utility extensions.'
 
 # This description is used to generate tags and improve search results.

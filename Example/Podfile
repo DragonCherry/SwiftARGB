@@ -3,9 +3,4 @@ use_frameworks!
 target 'SwiftARGB_Example' do
   pod 'SwiftARGB', :path => '../'
 
-  target 'SwiftARGB_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

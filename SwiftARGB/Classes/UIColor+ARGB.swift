@@ -8,9 +8,9 @@
 
 import UIKit
 
-public extension UIColor {
+extension UIColor {
     
-    var RGBString: String {
+    open var RGBString: String {
         let colorRef = cgColor.components
         let r: CGFloat = colorRef![0]
         let g: CGFloat = colorRef![1]
@@ -18,7 +18,7 @@ public extension UIColor {
         return String(NSString(format: "%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255))))
     }
     
-    var ARGBString: String {
+    open var ARGBString: String {
         let colorRef = cgColor.components
         let a: CGFloat = cgColor.alpha
         let r: CGFloat = colorRef![0]
@@ -27,7 +27,7 @@ public extension UIColor {
         return String(NSString(format: "%02lX%02lX%02lX%02lX", lroundf(Float(a * 255)), lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255))))
     }
     
-    convenience init(alpha: Float, red: Int, green: Int, blue: Int) {
+    public convenience init(alpha: Float, red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")
@@ -35,21 +35,21 @@ public extension UIColor {
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
     }
     
-    convenience init(red: Int, green: Int, blue: Int) {
+    public convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")
         assert(blue >= 0 && blue <= 255, "Invalid blue component")
         self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-    convenience init(rgbHex: Int) {
+    public convenience init(rgbHex: Int) {
         self.init(
             red: (rgbHex >> 16) & 0xff,
             green: (rgbHex >> 8) & 0xff,
             blue: rgbHex & 0xff)
     }
     
-    convenience init(rgbHex: Int, alpha: Float) {
+    public convenience init(rgbHex: Int, alpha: Float) {
         self.init(
             red: CGFloat((rgbHex >> 16) & 0xff),
             green: CGFloat((rgbHex >> 8) & 0xff),
@@ -57,7 +57,7 @@ public extension UIColor {
             alpha: CGFloat(alpha) / 255.0)
     }
     
-    convenience init(argbHex: UInt32) {
+    public convenience init(argbHex: UInt32) {
         let alpha: UInt32 = (argbHex >> 24)
         self.init(
             red: CGFloat((argbHex >> 16) & 0xff),
